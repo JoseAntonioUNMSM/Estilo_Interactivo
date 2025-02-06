@@ -1,0 +1,131 @@
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background: linear-gradient(135deg, #1a1a2e, #16213e, #0f3460);
+    overflow: hidden;
+    position: relative;
+}
+
+/* 🔹 Ajustar el contenedor para que sea responsive */
+.container {
+    position: relative;
+    text-align: center;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* 🔹 Tamaño adaptable de la caja */
+.gift-box {
+    width: 40vw;  /* Ajuste automático al ancho de la pantalla */
+    height: 40vw;
+    max-width: 300px; /* Tamaño máximo en pantallas grandes */
+    max-height: 300px;
+    background: url('imagen2.png') no-repeat center center;
+    background-size: contain; /* Ajuste para no deformar */
+    cursor: pointer;
+    transition: transform 0.3s ease;
+    position: relative;
+}
+
+/* 🔹 Ajustar tamaño cuando cambia a la imagen3.png */
+.gift-box.open {
+    width: 50vw;
+    height: 50vw;
+    max-width: 350px;
+    max-height: 350px;
+    background-size: contain;
+}
+
+/* 🔹 Ajuste de efecto de luz */
+.light-effect {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 20vw;
+    height: 20vw;
+    max-width: 150px;
+    max-height: 150px;
+    background: radial-gradient(circle, rgba(255,255,0,0.8) 10%, rgba(255,255,0,0) 80%);
+    opacity: 0;
+    transform: translate(-50%, -50%);
+    transition: opacity 0.5s ease;
+}
+
+/* 🔹 Ajuste de partículas */
+.particle {
+    position: absolute;
+    width: 1vw;
+    height: 1vw;
+    max-width: 6px;
+    max-height: 6px;
+    background-color: rgba(255, 255, 255, 0.8);
+    border-radius: 50%;
+    opacity: 0.5;
+    animation: shimmer 4s infinite ease-in-out alternate;
+}
+
+/* 📌 Distribución automática en pantalla */
+.particle:nth-child(1) { top: 5%; left: 10%; animation-duration: 3s; }
+.particle:nth-child(2) { top: 15%; left: 80%; animation-duration: 5s; }
+.particle:nth-child(3) { top: 25%; left: 50%; animation-duration: 4s; }
+.particle:nth-child(4) { top: 35%; left: 20%; animation-duration: 6s; }
+.particle:nth-child(5) { top: 45%; left: 70%; animation-duration: 3.5s; }
+.particle:nth-child(6) { top: 55%; left: 30%; animation-duration: 5.5s; }
+.particle:nth-child(7) { top: 65%; left: 90%; animation-duration: 4.2s; }
+.particle:nth-child(8) { top: 75%; left: 40%; animation-duration: 3.8s; }
+.particle:nth-child(9) { top: 85%; left: 60%; animation-duration: 5s; }
+.particle:nth-child(10) { top: 95%; left: 15%; animation-duration: 6s; }
+
+
+
+
+
+
+
+
+.container {
+    position: relative;
+    text-align: center;
+}
+
+
+
+
+.open-lid {
+    transform: rotate(-45deg) translateY(-20px);
+}
+
+.light-effect {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 150px;
+    height: 150px;
+    background: radial-gradient(circle, rgba(255,255,0,0.8) 10%, rgba(255,255,0,0) 80%);
+    opacity: 0;
+    transform: translate(-50%, -50%);
+    transition: opacity 0.5s ease;
+}
+
+.show-light {
+    opacity: 1;
+    animation: glow 1s ease infinite alternate;
+}
+
+@keyframes glow {
+    0% { filter: brightness(1); }
+    100% { filter: brightness(2); }
+}
+
+@keyframes shake {
+    0% { transform: translate(0px, 0px) rotate(0deg); }
+    25% { transform: translate(-5px, 5px) rotate(-2deg); }
+    50% { transform: translate(5px, -5px) rotate(2deg); }
+    75% { transform: translate(-5px, 5px) rotate(-2deg); }
+    100% { transform: translate(0px, 0px) rotate(0deg); }
+}

@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Felicidades</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <div class="particle"></div>
+    <div class="particle"></div>
+    <div class="particle"></div>
+    <div class="particle"></div>
+    <div class="particle"></div>
+    <div class="particle"></div>
+    <div class="particle"></div>
+    <div class="particle"></div>
+    <div class="particle"></div>
+    <div class="particle"></div>
+    <div class="particle"></div>
+    <div class="particle"></div>
+    <div class="particle"></div>
+    <div class="particle"></div>
+    <div class="particle"></div>
+    
+
+
+    <div class="container">
+        <div class="gift-box" id="giftBox">
+            <div class="light-effect" id="lightEffect"></div>
+            <div class="lid" id="lid"></div>
+        </div>
+    </div>
+
+    <script>
+        let clickCount = 0;
+        const giftBox = document.getElementById("giftBox");
+        const lightEffect = document.getElementById("lightEffect");
+        const lid = document.getElementById("lid");
+
+        giftBox.addEventListener("click", function() {
+            clickCount++;
+            giftBox.style.transform = `scale(${1 + clickCount * 0.3}) translate(${Math.random() * 20 - 10}px, ${Math.random() * 20 - 10}px)`;
+            giftBox.style.animation = "shake 0.2s ease";
+
+            setTimeout(() => {
+                giftBox.style.animation = "";
+            }, 300);
+
+            if (clickCount === 3) {
+            giftBox.style.backgroundImage = "url('imagen3.png')";
+            giftBox.classList.add("open"); // Aplica la clase para cambiar el tamaño
+            lightEffect.style.display = "none"; // Ocultar el efecto de luz
+            lid.classList.add("open-lid");
+        
+            setTimeout(() => {
+            window.location.href = "diseño.html"; // Redirección después de abrir la caja
+        }, 700);
+}
+
+
+        
+            
+        });
+    </script>
+</body>
+</html>
+
